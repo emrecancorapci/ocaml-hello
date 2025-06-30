@@ -1,2 +1,2 @@
-val v: string
-val hello: string
+val v : string
+val hello : string
