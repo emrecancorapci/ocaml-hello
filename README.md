@@ -1,6 +1,6 @@
 # OCaml
 
-This is a fast introduction to OCaml.
+Blazingly fast introduction to OCaml.
 
 ## Install
 
