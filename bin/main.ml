@@ -11,7 +11,13 @@ let b : bool = true
 let () = Printf.printf "%s\n%i\n%f\n%c\n%b\n" s i f c b
 let l : int list = [ 1; 2; 3; 4 ];;
 
-5 :: l
+let x = 10 + (let y = 50 in y * y);;
+
+print_int x;;
+print_endline "";;
+
+let x = 42 in print_int x;;
+print_endline "";;
 
 (* Function *)
 let square x = x * x;;
