@@ -9,17 +9,13 @@ let s : string = "String"
 let c : char = 'a'
 let b : bool = true
 let () = Printf.printf "%s\n%i\n%f\n%c\n%b\n" s i f c b
-let l : int list = [ 1; 2; 3; 4 ];;
+let l : int list = [ 1; 2; 3; 4 ]
+(* let tuple : int * string * char = (1, "one", 'o')
+let pair : int * string = (10, "on") *)
 
-let x = 10 + (let y = 50 in y * y);;
+(* FUNCTIONS *)
 
-print_int x;;
-print_endline "";;
-
-let x = 42 in print_int x;;
-print_endline "";;
-
-(* Function *)
+(* Basic Function *)
 let square x = x * x;;
 
 print_int (square 4);;
@@ -33,26 +29,20 @@ let multiple_by_five : int -> int = rect 5
 let ten : int = multiple_by_five 2;;
 
 print_int ten;;
-print_endline "";;
+print_endline ""
 
 (* Anonymous (Lambda) Functions *)
+let print_list = List.map (fun int -> Printf.printf "\n%i" int);;
 
-List.map (fun int -> Printf.printf "\n%i" int) l;;
+print_list l;;
 print_endline ""
 
-(* If-Else Expr *)
-let abs (x : int) : int = if x < 0 then -x else x;;
-
-print_int (abs (-8));;
-print_endline ""
-
-(* Pattern Matching *)
-let describe_num n =
-  match n with
-  | 0 -> "Zero"
-  | 1 -> "One"
-  | x when x > 0 -> "Positive"
-  | _ -> "Negative" (* Wildcard pattern *)
+(* Recursive Functions *)
+let rec range lo hi step =
+  if lo > hi then [] else lo :: range (lo + step) hi step
 ;;
 
-print_endline (describe_num 1)
+(* 0 1 3 5 7 9 *)
+print_list (0 :: range 1 9 2);;
+print_endline ""
+

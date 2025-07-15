@@ -2,3 +2,7 @@
  (public_name hello)
  (name main)
  (libraries hello sexplib))
+
+(executable
+ (name flow_and_control)
+ (public_name fac))
